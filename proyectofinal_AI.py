@@ -862,6 +862,16 @@ print("F1-Score: ", svc_hf170_30)
 if __name__ == "__main__":
     app.run(debug=True)
 
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def index():
+    return "¡Tu modelo de IA está desplegado correctamente en Render!"
+
+if __name__ == "__main__":
+    app.run()
 
 # %% [markdown]
 # # CONCLUSIÓN
