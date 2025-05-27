@@ -47,6 +47,14 @@ from sklearn.utils import resample
 # Libreria para cambio de datos
 from sklearn.preprocessing import LabelEncoder
 import eli5
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "¡Hola desde Flask en Render!"
+
 
 # Tu código aquí
 
@@ -851,6 +859,9 @@ print("Recall: ", svc_hrecall70_30)
 # F1 score
 svc_hf170_30 = round(f1_score(y_test, pred), 2)
 print("F1-Score: ", svc_hf170_30)
+if __name__ == "__main__":
+    app.run(debug=True)
+
 
 # %% [markdown]
 # # CONCLUSIÓN
